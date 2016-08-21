@@ -1,0 +1,19 @@
+{
+  "name": "bbs-demo",
+  "version": "1.0.0",
+  "description": "A simple bbs demo.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madeinlife/bbs-demo.git"
+  },
+  "author": "madeinlife",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madeinlife/bbs-demo/issues"
+  },
+  "homepage": "https://github.com/madeinlife/bbs-demo#readme"
+}
