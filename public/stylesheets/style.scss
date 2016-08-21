@@ -1,0 +1,62 @@
+$gray1: #e1e1e1;
+$gray2: #f6f6f6;
+$node_green: #80bd01;
+$node_black: #444444;
+
+$blue1:#4a90e2;
+body {
+    background-color: $gray1;
+    font-family: "Helvetica Neue", "Hiragino Sans GB", STHeiti, sans-serif !important;
+}
+
+.navbar{
+    width:100%;
+    background-color: $node_black;
+    margin-bottom: 0px;
+    z-index: 9;
+    position: relative;
+    font-size: 13px;
+    .navbar-inner{
+        background: none;
+        box-shadow: none;
+        margin: auto;
+        width: 90%;
+        border: none;
+        padding:5px;
+        .container{
+            width: 100%;
+            min-width: 960px;
+            max-width: 1400px;
+        }
+    }
+    .nav > li > a {
+        text-shadow: none;
+        color: #cccccc;
+        &:hover {
+            color: white;
+        }
+    }
+    .brand{
+        width:120px;
+        height:28px;
+        padding: 3px 20px;
+    }
+    // 搜索框样式
+    .navbar-search{
+        margin-top: 6px;
+        .search-query{
+            background:#888 url('../images/search.png') no-repeat 4px 4px;
+            padding: 3px 5px 3px 22px;
+            color: #666;
+            border: 0px;
+            margin-top: 2px;
+            &:hover {
+                background-color: white;
+            }
+            // transition: all 0.5s;
+            &:focus, &.focused {
+                background-color: white;
+            }
+        }
+    }
+}

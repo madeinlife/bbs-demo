@@ -1,5 +1,45 @@
-
 body {
-    font-family: sans-serif;
-    color:'#6a6a6a';
-}
+  background-color: #e1e1e1;
+  font-family: "Helvetica Neue", "Hiragino Sans GB", STHeiti, sans-serif !important; }
+
+.navbar {
+  width: 100%;
+  background-color: #444444;
+  margin-bottom: 0px;
+  z-index: 9;
+  position: relative;
+  font-size: 13px; }
+  .navbar .navbar-inner {
+    background: none;
+    box-shadow: none;
+    margin: auto;
+    width: 90%;
+    border: none;
+    padding: 5px; }
+    .navbar .navbar-inner .container {
+      width: 100%;
+      min-width: 960px;
+      max-width: 1400px; }
+  .navbar .nav > li > a {
+    text-shadow: none;
+    color: #cccccc; }
+    .navbar .nav > li > a:hover {
+      color: white; }
+  .navbar .brand {
+    width: 120px;
+    height: 28px;
+    padding: 3px 20px; }
+  .navbar .navbar-search {
+    margin-top: 6px; }
+    .navbar .navbar-search .search-query {
+      background: #888 url("../images/search.png") no-repeat 4px 4px;
+      padding: 3px 5px 3px 22px;
+      color: #666;
+      border: 0px;
+      margin-top: 2px; }
+      .navbar .navbar-search .search-query:hover {
+        background-color: white; }
+      .navbar .navbar-search .search-query:focus, .navbar .navbar-search .search-query.focused {
+        background-color: white; }
+
+/*# sourceMappingURL=style.css.map */
