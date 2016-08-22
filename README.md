@@ -1,5 +1,13 @@
 # 一个简单论坛程序
 
 ## 文档
-1. [express基本使用](./docs/01-express基本使用.md);
+1. [express基本使用](./docs/01-express.md);
 2. [express 模板的使用](./docs/02-express-template.md);
+3. [sass基本使用](./docs/03-sass.md);
+4. [web css 使用与说明](./docs/04-css.md);
+
+## 使用说明
+- git clone https://github.com/madeinlife/bbs-demo.git
+- cd bbs-demo;
+- npm install;
+- node app.js;

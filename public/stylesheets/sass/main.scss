@@ -1,0 +1,26 @@
+// 导航下面的 主题样式
+.main {
+    width: 90%;
+    min-width: 960px;
+    max-width: 1400px;
+    margin: 5px auto;
+    min-height: 450px;
+    //左边的主体内容区域样式
+    .content {
+        padding: 0;
+        margin-right: 305px;
+
+    }
+    //右边的侧边栏样式
+    #sidebar {
+        width: 290px;
+        float: right;
+        font-size: 14px;
+        margin-bottom: 20px;
+        .header{
+            color: hsl(202, 6%, 34%);
+        }
+    }
+}
+// 导入面板样式 panel
+@import 'panel';
