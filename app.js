@@ -45,7 +45,8 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname,'public')));
+// app.use(express.static(path.join(__dirname,'public')));
+app.use('/public',express.static(path.join(__dirname,'public')));
 
 //mongoose 链接数据库
 mongoose.connect("mongodb://127.0.0.1:27017/bbs_demo");

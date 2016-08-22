@@ -8,7 +8,23 @@
 5. morgan
 6. loadsh
 
+### express基本使用
 
+```javascript
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(cookieParser());
+//静态文件处理
+app.use('/public',express.static(path.join(__dirname,'public')));
+app.use('/',(req,res) => {res.send('Hello World!')});
+app.listen(3000);
+```
 
 ### 文件布局说明：
 - 目录`controllers`:控制器函数，路由中的各种函数统一放在controllers目录中；

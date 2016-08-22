@@ -1,0 +1,73 @@
+// 网站导航样式
+
+.navbar {
+    background-color: $node_black;
+    height: 50px;
+    width: 100%;
+    .navbar-inner{
+        width: 90%;
+        margin: 0 auto;
+        padding: 5px;
+        .container{
+            font-size: 14px;
+            width: 100%;
+            min-width: 960px;
+            max-width: 1400px;
+            line-height: 20px;
+            
+            .navbar-brand {
+                display: inline-block;
+                padding: 4px 20px;
+                float: left;
+                img {
+                    width: 120px;
+                    height: 28px;
+                }
+            }
+            form.navbar-search{
+                float: left;
+                margin-top: 6px;
+                .search-query {
+                    background: #888 url('../images/search.png') no-repeat 4px 4px;
+                    border-radius: 15px;
+                    width: 210px;
+                    outline: none;
+                    padding: 3px 5px 3px 22px;
+                    border: 0;
+                    height: 20px;
+                    margin-bottom: 0;
+                    &:hover {
+                        background-color: white;
+                        transition: all 0.5s;
+                    }
+                    &:focus,&:focused{
+                        background-color: white;
+                    }
+
+                }
+
+            }
+            ul.nav {
+                list-style: none;
+                // padding: 5px;
+                li {
+                    display: inline-block;
+                    // float: left;
+                    a {
+                        padding: 10px 15px;
+                        display: inline-block;
+                        // width: 100px;
+                        color: #cccccc;
+                        text-align: center;
+                        &:hover {
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+        }
+
+
+    }
+}
