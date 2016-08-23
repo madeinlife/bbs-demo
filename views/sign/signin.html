@@ -14,7 +14,15 @@
         </div>
         <div class='inner'>
             <div class="login-main">
-                <form action="/singnin" method="post" class="login-form" id="login-from">
+                <form action="/signin" method="post" class="login-form" id="login-from">
+                    {{#if error}}
+                        <div class="msg error">
+                            {{error}}
+                        </div>
+                    {{/if}}
+                    {{#if sucess}}
+                        <div class="msg sucess">{{sucess}}</div>
+                    {{/if}}
                     <div class="form-group">
                         <label for="loginname">用户名</label>
                         <input type="text" id="loginname" name="loginname">
@@ -24,7 +32,7 @@
                         <input type="password" id="pass" name="pass">
                     </div>
                     <div class="form-actions">
-                        <input type="submit" class="btn btn-primary" value="提交">
+                        <input type="submit" class="btn btn-primary" value="登陆">
                         <input type="reset" class="btn btn-info" value="重置">
                     </div>
                 </form>

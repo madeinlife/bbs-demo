@@ -1,1 +1,9 @@
-<h4> {{message}}</h4>
+{{> header}}
+<center>
+    <h4 style='color:#444;font-size: 14px;min-height:400px;'> {{message}}</h4>
+    {{#if error}}
+        <p>
+            {{error}}
+        </p>
+    {{/if}}
+</center>

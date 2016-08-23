@@ -12,6 +12,9 @@ body {
     color: #333;
 }
 
+//引入有compass生成的reset样式
+@import "sass/reset";
+
 //引入基本样式base.scss
 @import 'sass/base';
 .fl {

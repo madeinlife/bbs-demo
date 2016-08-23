@@ -1,15 +1,18 @@
-## express 项目基本使用
----
+# express 项目基本使用
+
+## 基本使用
+
 ### 依赖库：
-1. expree
+1. express
 2. body-parser
 3. cookie-parser
 4. express-session
 5. morgan
 6. loadsh
+7. mongoose
+8. connect-redis
 
-### express基本使用
-
+### 简单用例
 ```javascript
 var express = require('express');
 var path = require('path');
@@ -26,6 +29,7 @@ app.use('/',(req,res) => {res.send('Hello World!')});
 app.listen(3000);
 ```
 
+## 项目结构说明
 ### 文件布局说明：
 - 目录`controllers`:控制器函数，路由中的各种函数统一放在controllers目录中；
 - 目录`docs`：放置一些项目进行中，用到的基础知识；

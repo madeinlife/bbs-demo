@@ -15,7 +15,8 @@ router.post('/signup',sign.signup);
 router.get('/signin',sign.showSignin);
 //提交用户登陆信息
 router.post('/signin',sign.signin);
-
+// 用户登出
+router.get('/signout', sign.signout);
 
 
 

@@ -2,6 +2,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+var RedisStore = require('connect-redis')(session);
 // var hbs = require('hbs');
 var mongoose = require('mongoose');
 var exphbs = require('express-handlebars');
@@ -40,6 +42,9 @@ app.engine('html',exphbs({
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine','html');
 
+//设置local 贯穿真个app的变量
+app.locals.config = config;
+
 // 设置loger信息，这样方便在终端查看日志信息
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -47,13 +52,29 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(cookieParser());
 // app.use(express.static(path.join(__dirname,'public')));
 app.use('/public',express.static(path.join(__dirname,'public')));
+// 使用session
+app.use(session({
+    secret: config.session_secret,
+    store: new RedisStore({
+        port: config.redis_db.port,
+        host: config.redis_db.host,
+        // db: config.redis_db.db,
+        // pass: config.redis_db.pass
+    }),
+    resave: false,
+    saveUninitialized: false
+    // saveUninitialized: false,
+}));
 
 //mongoose 链接数据库
 mongoose.connect("mongodb://127.0.0.1:27017/bbs_demo");
+// session.user中间件
+app.use(function(req,res,next){
+    app.locals.current_user = req.session.user;
+    next();
+})
 
-//设置local 贯穿真个app的变量
-app.locals.config = config;
-
+//
 // 使用路由
 app.use('/',webRouter);
 // app.use('/',routers);
@@ -66,7 +87,9 @@ app.use((req, res, next) => {
   next(err);
 });
 
-app.set('env','developent');
+
+
+// app.set('env','developent');
 
 
 // error handlers
@@ -76,6 +99,7 @@ app.set('env','developent');
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
+    // console.log(err);
     res.render('error', {
       message: err.message,
       error: err
