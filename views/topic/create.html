@@ -1,0 +1,81 @@
+{{> header}}
+
+
+<div class="main">
+    {{> sign/sidebar}}
+    <div class="content">
+        <div class="panel">
+            <div class="header">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="/">首页</a>
+                        <span class="divider">/</span>
+                    </li>
+                    <li>发表话题</li>
+                </ul>
+            </div>
+            <div class="inner">
+                <form action="/topic/create" method="post" id="create-topic-form">
+                    {{#if error}}
+                        <div class="error">
+                            {{error}}
+                        </div>
+                    {{/if}}
+                    {{#if sucess}}
+                        <div class="sucess">
+                            {{sucess}}
+                        </div>
+                    {{/if}}
+                    <fieldset>
+                        <span class="tab-select">选择板块：</span>
+                        <select name="tab" id="tab-value">
+                            <option value="topic">主题</option>
+                            <option value="ask">问答</option>
+                            <option value="招聘">招聘</option>
+                        </select>
+                        <br>
+                        <input type="text" name="title" id="title" class="span9">
+                        <div class="markdown-editer in-editor">
+                            <div class="markdown-in-editor">
+                                <textarea name="t_content" id="editor" class="editor" cols="30" rows="10">
+
+                                </textarea>
+                                <br>
+                                <div class="editor-buttons">
+                                    <input type="submit" class='btn btn-primary' value='提交'>
+                                </div>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" type="text/css" href="/public/libs/simditor/styles/simditor.css" />
+<script type="text/javascript" src="/public/libs/simditor/scripts/jquery.min.js"></script>
+<script type="text/javascript" src="/public/libs/simditor/scripts/module.js"></script>
+<script type="text/javascript" src="/public/libs/simditor/scripts/hotkeys.js"></script>
+<script type="text/javascript" src="/public/libs/simditor/scripts/uploader.js"></script>
+<script type="text/javascript" src="/public/libs/simditor/scripts/simditor.js"></script>
+<!-- 使用simditor富文本编辑器 -->
+<script>
+    $(function(){
+        var toolbar = ['title', 'bold', 'italic', 'underline', 'strikethrough', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|', 'link', 'image', '|', 'indent', 'outdent'];
+        var toolbar_all = ['title', 'bold', 'italic', 'underline', 'strikethrough', 'fontScale', 'color', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|', 'link', 'image', 'hr', '|', 'indent', 'outdent', 'alignment'];
+        var mobileToolbar = ["bold", "underline", "strikethrough", "color", "ul", "ol"];
+        var editor = new Simditor({
+              textarea: $('#editor'),
+              toolbar: toolbar,
+              placeholder: '',
+            //   upload: true,
+              //optional options
+              defaultImage:'',
+              pasteImage: true,
+
+            });
+
+    });
+</script>

@@ -1,10 +1,6 @@
 var EventProxy = require('eventproxy');
 var ep = EventProxy();
 
-console.log(EventProxy);
-console.log('==========');
- console.log(ep);
-
 ep.on('error',function(msg){
 	console.log('=======error=======');
 	console.log(msg);

@@ -13,7 +13,8 @@ body {
 }
 
 //引入有compass生成的reset样式
-@import "sass/reset";
+// 一般是使用 normalize.css
+// @import "sass/reset";
 
 //引入基本样式base.scss
 @import 'sass/base';
@@ -27,6 +28,13 @@ body {
 // 用户登录 注册样式
 @import 'sass/sign.scss';
 
+// 话题相关样式
+@import 'sass/topic';
 
 // 网站底部样式
 @import 'sass/footer';
+
+main{
+    color: #fff;
+    font-size: 14px;
+}

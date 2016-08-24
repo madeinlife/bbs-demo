@@ -21,15 +21,15 @@ ul {
     margin: 0 0 10px 25px;
 }
 // 左浮动
-.fl{
+.fl, pull-left {
     float: left;
 }
 // 右浮动
-.fr {
+.fr, pull-right {
     float: right;
 }
 // 清除浮动
-.clear {
+.clear,clearfix {
     clear: both;
 }
 // 按钮样式
@@ -47,6 +47,7 @@ ul {
     line-height: 2em;
     vertical-align: middle;
     background-color: #e5e5e5;
+    text-align: center;
     // transition: all 0.2s ease-in-out;
 }
 .btn-primary {

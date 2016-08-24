@@ -7,6 +7,7 @@
 4. [web css 使用与说明](./docs/04-css.md);
 5. [express中mongoos的使用](./docs/05-mongoose.md);
 6. [express中session的使用](./docs/06-express-session.md);
+7. [富文本编辑器的使用](./docs/07-editor.md)
 
 ## 使用说明
 - git clone https://github.com/madeinlife/bbs-demo.git

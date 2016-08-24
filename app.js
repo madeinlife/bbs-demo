@@ -8,12 +8,13 @@ var RedisStore = require('connect-redis')(session);
 var mongoose = require('mongoose');
 var exphbs = require('express-handlebars');
 var logger = require('morgan');
-
 var app = express();
 // var routers = require('./routes/index');
 // var userRouter = require('./routes/users');
 var webRouter = require('./web_router');
 var config = require('./config');
+// 导入中间件
+var authMiddleWare = require('./middlewares/auth');
 // 设置模版引擎 hbs模块版本
 /*
 app.set('views',path.join(__dirname,'views'));
@@ -68,11 +69,13 @@ app.use(session({
 
 //mongoose 链接数据库
 mongoose.connect("mongodb://127.0.0.1:27017/bbs_demo");
+//  开始使用中间件，中间件需要在路由使用前使用。
 // session.user中间件
 app.use(function(req,res,next){
     app.locals.current_user = req.session.user;
     next();
-})
+});
+
 
 //
 // 使用路由

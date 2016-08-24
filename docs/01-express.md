@@ -11,6 +11,7 @@
 6. loadsh
 7. mongoose
 8. connect-redis
+9. validator
 
 ### 简单用例
 ```javascript
@@ -37,6 +38,7 @@ app.listen(3000);
 - 目录`models`:数据模型
 - 目录`public`:静态文件目录；
 - 目录`views`：模板文件放在这里；
+- 目录`middlewares`: 中间件目录
 - 文件`web_router.js`:网站路由的总汇集处；
 - 文件`app.js`：程序入口。
 
@@ -48,4 +50,10 @@ app.listen(3000);
     - `signin`：post 登陆处理函数；
     - `showSignup`: 用户注册页面；
     - `signup`: post 提交注册信息处理函数；
-3. `user.js`:用户
+3. `topic.js`:话题相关的控制函数
+    - `showCreate`
+
+#### middlewares
+1. `auth.js`: 用户校验中间件
+    - `requireLogin`:需要登陆才能next，发帖、回帖等需要校验。在web路由中第二个参数就可以调用；
+2.

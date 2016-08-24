@@ -1,0 +1,93 @@
+// 话题创建页面 form表单
+
+// bootstrap中的样式
+fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+select {
+    width: 220px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    height: 30px;
+    line-height: 30px;
+}
+
+textarea {
+    border: 0;
+    box-shadow: none;
+}
+textarea, textarea:focus, input, input:focus {
+    box-shadow: 0px 0px 2px rgba(60, 60, 60, 0.5);
+}
+
+.span9 {
+    width: 700px;
+}
+
+input, textarea {
+    background: hsla(0, 0%, 0%, 0);
+}
+
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    display: inline-block;
+    height: 20px;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #555555;
+    vertical-align: middle;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+
+#create-topic-form {
+    .error{
+        color: #ff4900;
+        line-height: 40px;
+        padding: 0 0 0 15px;
+        font-size: 14px;
+    }
+    .sucess {
+        font-size: 14px;
+        line-height: 40px;
+        padding: 0 0 0 15px;
+        color: #1e7d1c;
+    }
+    .tab-select{
+        display: inline-block;
+        line-height: 20px;
+        font-size: 14px;
+        color: #555;
+        vertical-align: center;
+
+    }
+    #tab-value {
+        display: inline-block;
+        font-size: 14px;
+        height: 30px;
+    }
+    #title {
+        border: none;
+        // border: 1px solid #c9d8db;
+        // box-shadow: none;
+        width: 98%;
+        // padding: 5px 10px;
+    }
+    .editor{
+        height: 400px;
+        width: 100%;
+    }
+    .editor-buttons{
+        margin-top: 10px;
+        input {
+            width: 100px;
+            text-align: center;
+        }
+    }
+}

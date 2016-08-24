@@ -1,8 +1,8 @@
 var path = require('path');
 
 var config = {
-    //网站logo
-    site_logo: './public/images/nodejs_light.svg',
+    //网站logo 用绝对路径，如果用相对路径，多级页面会出错。
+    site_logo: '/public/images/nodejs_light.svg',
     // session 密匙
     session_secret: '@#ljsdflsajflsdfj$JLJdfj%%jjdklf',
     // 储存session的redis db 信息

@@ -5,54 +5,6 @@ body {
   font-size: 13px;
   color: #333; }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline; }
-
-html {
-  line-height: 1; }
-
-ol, ul {
-  list-style: none; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle; }
-
-q, blockquote {
-  quotes: none; }
-
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none; }
-
-a img {
-  border: none; }
-
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-  display: block; }
-
 a {
   text-decoration: none; }
 
@@ -64,13 +16,13 @@ ul {
   padding: 0;
   margin: 0 0 10px 25px; }
 
-.fl {
+.fl, pull-left {
   float: left; }
 
-.fr {
+.fr, pull-right {
   float: right; }
 
-.clear {
+.clear, clearfix {
   clear: both; }
 
 .btn {
@@ -86,7 +38,8 @@ ul {
   border-radius: 3px;
   line-height: 2em;
   vertical-align: middle;
-  background-color: #e5e5e5; }
+  background-color: #e5e5e5;
+  text-align: center; }
 
 .btn-primary {
   color: white;
@@ -254,6 +207,76 @@ p {
     .reg-main .reg-form .form-actions .btn, .reg-main .login-form .form-actions .btn, .login-main .reg-form .form-actions .btn, .login-main .login-form .form-actions .btn {
       margin-right: 20px; }
 
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0; }
+
+select {
+  width: 220px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  height: 30px;
+  line-height: 30px; }
+
+textarea {
+  border: 0;
+  box-shadow: none; }
+
+textarea, textarea:focus, input, input:focus {
+  box-shadow: 0px 0px 2px rgba(60, 60, 60, 0.5); }
+
+.span9 {
+  width: 700px; }
+
+input, textarea {
+  background: transparent; }
+
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  display: inline-block;
+  height: 20px;
+  padding: 4px 6px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #555555;
+  vertical-align: middle;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px; }
+
+#create-topic-form .error {
+  color: #ff4900;
+  line-height: 40px;
+  padding: 0 0 0 15px;
+  font-size: 14px; }
+#create-topic-form .sucess {
+  font-size: 14px;
+  line-height: 40px;
+  padding: 0 0 0 15px;
+  color: #1e7d1c; }
+#create-topic-form .tab-select {
+  display: inline-block;
+  line-height: 20px;
+  font-size: 14px;
+  color: #555;
+  vertical-align: center; }
+#create-topic-form #tab-value {
+  display: inline-block;
+  font-size: 14px;
+  height: 30px; }
+#create-topic-form #title {
+  border: none;
+  width: 98%; }
+#create-topic-form .editor {
+  height: 400px;
+  width: 100%; }
+#create-topic-form .editor-buttons {
+  margin-top: 10px; }
+  #create-topic-form .editor-buttons input {
+    width: 100px;
+    text-align: center; }
+
 .footer {
   clear: both;
   background-color: white; }
@@ -266,5 +289,9 @@ p {
     font-size: 13px;
     line-height: 2em;
     color: #ababab; }
+
+main {
+  color: #fff;
+  font-size: 14px; }
 
 /*# sourceMappingURL=style.css.map */

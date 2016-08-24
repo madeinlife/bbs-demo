@@ -1,6 +1,7 @@
 ## express 模板引擎的使用
 
-### 1 使用[hbs](https://github.com/donpark/hbs)
+## 模板引擎handlebars
+### 1：[hbs](https://github.com/donpark/hbs)
 #### 基本使用
 ```
 // 设置模版引擎
@@ -10,7 +11,7 @@ app.set('view engine','hbs');
 hbs.registerPartials(path.join(__dirname,'views/partials'));
 ```
 
-### 2 使用: [express-handlebars](https://github.com/ericf/express-handlebars)
+### 2：[express-handlebars](https://github.com/ericf/express-handlebars)
 #### 基本使用
 `注意：`模板文件的后最名需要和`engine`的名字相同,`hbs`,`html`,`handlebars`等
 ```javascript
@@ -41,8 +42,9 @@ exports.map= function(name){
     return baseUrl + name;
 }
 ```
-**使用静态文件**
-`layout.hbs`
+####  使用静态文件
+`layout.hbs`代码：
+`{{static '/public/css/style.css'}}`:
 ```html
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -61,8 +63,26 @@ exports.map= function(name){
     </body>
 </html>
 ```
-
 **如果在渲染模板的时候，不想使用默认的layout：**
 ```js
 res.render('index',{layout: false});
 ```
+#### if else 的使用
+```html
+{{#if current_user }}
+    <li>
+        <a  href="/signout" class='nav-link'>登出</a>
+    </li>
+{{else }}
+    <li>
+        <a  href="/signup" class='nav-link'>注册</a>
+    </li>
+    <li>
+        <a  href="/signin" class='nav-link'>登陆</a>
+    </li>
+{{/if}}
+```
+
+#### 标签转义
+`{{title}}` 用`{{  }}`包裹的变量，html标签会原样输出，不会渲染。
+`{{{ }}}`用三个`{ }`那么html就会转译，需要特别注意使用。安全方面很重要。
