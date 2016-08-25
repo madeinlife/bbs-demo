@@ -3,15 +3,17 @@
 ## 基本使用
 
 ### 依赖库：
-1. express
-2. body-parser
-3. cookie-parser
-4. express-session
-5. morgan
-6. loadsh
-7. mongoose
-8. connect-redis
-9. validator
+1. `express`：web框架express模块
+2. `body-parser`：处理客户提交的body内容模块
+3. `cookie-parser`：cookie中间件模块
+4. `express-session`：session中间件模块
+5. `morgan`：记录器模块，主要功能是：在控制台中，显示req请求的信息logger('dev')
+6. `loadsh`：数据操作模块，underscore
+7. `mongoose`：数据对象模型模块
+8. `connect-redis`：链接redis数据库的模块，session中要用到
+9. `validator`：字符串验证器，主要是`isXXX`方法等
+10. `log4js`: 日志管理模块
+11. `utility`:一个实用工具库有`md5`方法等,[docs](https://www.npmjs.com/package/utility)
 
 ### 简单用例
 ```javascript

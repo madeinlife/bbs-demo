@@ -3,14 +3,27 @@
 ## 模板引擎handlebars
 ### 1：[hbs](https://github.com/donpark/hbs)
 #### 基本使用
-```
+**简单应用**
+```js
 // 设置模版引擎
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine','hbs');
 **设置partials**
 hbs.registerPartials(path.join(__dirname,'views/partials'));
 ```
-
+**自定义后缀名为`html`和添加个`static`函数**
+```js
+var hbs = require('hbs');
+// 设置模版引擎 hbs模块版本
+app.engine('html', hbs.__express);
+hbs.registerPartials(path.join(__dirname,'views/partials'));
+hbs.registerHelper('static', function(name){
+                    return require('./lib/static').map(name)
+                });
+app.set('views',path.join(__dirname,'views'));
+app.set('view engine','html');
+```
+---
 ### 2：[express-handlebars](https://github.com/ericf/express-handlebars)
 #### 基本使用
 `注意：`模板文件的后最名需要和`engine`的名字相同,`hbs`,`html`,`handlebars`等

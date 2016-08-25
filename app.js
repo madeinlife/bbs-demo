@@ -4,25 +4,28 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
-// var hbs = require('hbs');
+// 模版引擎
+var hbs = require('hbs');
+// var exphbs = require('express-handlebars');
 var mongoose = require('mongoose');
-var exphbs = require('express-handlebars');
 var logger = require('morgan');
 var app = express();
-// var routers = require('./routes/index');
-// var userRouter = require('./routes/users');
 var webRouter = require('./web_router');
 var config = require('./config');
 // 导入中间件
 var authMiddleWare = require('./middlewares/auth');
-// 设置模版引擎 hbs模块版本
-/*
-app.set('views',path.join(__dirname,'views'));
-app.set('view engine','hbs');
-hbs.registerPartials(path.join(__dirname,'views/partials'));
-*/
 
-//设置模板引擎 express-handlebars
+// 设置模版引擎 hbs模块版本
+app.engine('html', hbs.__express);
+hbs.registerPartials(path.join(__dirname,'views/partials'));
+hbs.registerHelper('static', function(name){
+                    return require('./lib/static').map(name)
+                });
+app.set('views',path.join(__dirname,'views'));
+app.set('view engine','html');
+
+/*
+//设置模板引擎 express-handlebars；
 app.engine('html',exphbs({
     layoutsDir: path.join(__dirname,'views'),
     // layoutsDir: __dirname + '/views',
@@ -42,6 +45,7 @@ app.engine('html',exphbs({
 }));
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine','html');
+*/
 
 //设置local 贯穿真个app的变量
 app.locals.config = config;
