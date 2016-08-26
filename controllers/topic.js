@@ -1,6 +1,26 @@
 // 话题 方面的控制函数
 var validator = require('validator');
 var TopicModel = require('../models/topic');
+var EventProxy = require('eventproxy');
+// 显示话题详情页
+exports.showDetail = function(req,res){
+    // 1. 先取到文章的id
+    var topicId = req.params.tid;
+
+    var ep = new EventProxy();
+    ep.on('topic_data_ok',function(topic){
+        res.render('topic/detail',{topic: topic});
+    });
+    TopicModel.getTopic(topicId,function(error,topic){
+        if(error){
+            res.status(404);
+            return;
+        }
+        if(topic){
+            ep.emit('topic_data_ok',topic);
+        }
+    });
+}
 
 // 创建话题: get
 exports.showTopicCreate = function(req,res){

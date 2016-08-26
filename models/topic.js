@@ -15,6 +15,10 @@ var TopicSchema = new mongoose.Schema({
 TopicSchema.statics.addTopic = function(topic,callback){
     return this.create(topic,callback);
 };
+// 获取话题详细信息
+TopicSchema.statics.getTopic = function(topicId,callback){
+    return this.findOne({_id:topicId},callback);
+};
 
 var Topic = mongoose.model('Topic',TopicSchema);
 

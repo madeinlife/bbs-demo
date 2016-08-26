@@ -1,0 +1,23 @@
+<!-- 话题的详情页 -->
+{{> header}}
+<div class="main">
+    {{> sidebar }}
+    <div class="content">
+        <div class="panel">
+            <div class="header topic-header">
+                <span class="topic-full-title">
+                    <span class="put-top">置顶</span>
+                    {{topic.title}}
+                </span>
+                <div class="changes">
+                    <span>发布于:{{formateDate topic.create_at}}，作者：{{topic.author_id}}</span>
+                </div>
+            </div>
+            <div class="inner">
+                <div class="topic-content">
+                    {{{topic.content}}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -91,3 +91,43 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
         }
     }
 }
+// topic detail page css
+// .header .topic-header{
+//         // background-color: #fff !important;
+//         background-color: #fff;
+//         border-bottom: 1px  solid #555;
+//     }
+// .header.topic-header 如果样式冲突，那么就加级，权重就高了
+// 话题的头部样式
+.topic-header {
+    border-bottom: 1px solid #e5e5e5;
+    // 话题头部之标题样式
+    .topic-full-title {
+        font-size: 22px;
+        font-weight: 600;
+        margin: 8px 0;
+        width: 75%;
+        display: inline-block;
+        vertical-align: bottom;
+        line-height: 130%;
+        // 标题置顶、精华样式
+        .put-top , put-good{
+            background-color: #80bd01;
+            padding: 2px 4px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            color:#fff;
+            font-size: 12px;
+        }
+    }
+    // 标题下面的，日期，作者、信息样式
+    .changes{
+        font-size: 12px;
+        color: #838383;
+        // 在每个span前面加个·号
+        span::before {
+            content:"•";
+        }
+    }
+}

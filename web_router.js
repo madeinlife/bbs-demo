@@ -28,6 +28,8 @@ router.get('/topic/create',auth.requireLogin,topic.showTopicCreate);
 // 话题：post发表话题,
 router.post('/topic/create',topic.topicCreate);
 
-
+// http://localhost:3001/topic/57beefce861ceef44421fd56
+// 显示话题页面
+router.get('/topic/:tid',topic.showDetail);
 
 module.exports = router;

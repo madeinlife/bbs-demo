@@ -1,11 +1,12 @@
 // 面板样式
 .panel {
+    // 面板头部
     .header{
         padding: 10px 10px;
         background-color: $gray2;
         border-radius: 3px 3px 0 0;
-
-        &.topic_header {
+        // 当是话题标题头部的时候样式
+        &.topic-header {
           background-color: white;
         }
         // 面包屑样式
@@ -31,6 +32,7 @@
 
         }
     }
+    // 面板内容主体样式
     .inner {
         background-color: white;
         padding: 10px ;
@@ -38,6 +40,7 @@
         line-height: 2em;
         border-radius: 0 0 3px 3px;
         font-size: 13px;
+        // 内部表单样式
         form.form-horizontal{
             margin: 40px auto;
             label {
@@ -46,7 +49,10 @@
             input {
                 width: 200px;
             }
-
+        }
+        // a 链接颜色设置
+        a {
+            color: #08c;
         }
     }
 }

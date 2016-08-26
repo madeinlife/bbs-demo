@@ -21,6 +21,11 @@ hbs.registerPartials(path.join(__dirname,'views/partials'));
 hbs.registerHelper('static', function(name){
                     return require('./lib/static').map(name)
                 });
+// 给模板注册个formateDate函数
+hbs.registerHelper('formateDate', function(date) {
+            return date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate();
+            });
+
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine','html');
 
@@ -66,6 +71,7 @@ app.use(session({
         // db: config.redis_db.db,
         // pass: config.redis_db.pass
     }),
+    maxAge:3600,
     resave: false,
     saveUninitialized: false
     // saveUninitialized: false,

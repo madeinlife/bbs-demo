@@ -59,3 +59,9 @@ app.listen(3000);
 1. `auth.js`: 用户校验中间件
     - `requireLogin`:需要登陆才能next，发帖、回帖等需要校验。在web路由中第二个参数就可以调用；
 2.
+
+## 知识点
+### request请求发送的信息
+1- `body`:post传递过来的表单数据，用`req.body.<name>`来获取；
+2- `query`:get传递过来的数据，用`req.query.<name>`来获取值；
+3- `params`路由路径中配置的参数，`/user/:id`,用`req.params.id`来获取值；
