@@ -9,6 +9,9 @@ var hbs = require('hbs');
 // var exphbs = require('express-handlebars');
 var mongoose = require('mongoose');
 var logger = require('morgan');
+// 文件上传connect-busboy
+var busboy = require('connect-busboy');
+
 var app = express();
 var webRouter = require('./web_router');
 var config = require('./config');
@@ -54,6 +57,12 @@ app.set('view engine','html');
 
 //设置local 贯穿真个app的变量
 app.locals.config = config;
+// 文件上传中间件
+app.use(busboy({
+  limits: {
+    fileSize: 10 * 1024 * 1024
+  }
+}));
 
 // 设置loger信息，这样方便在终端查看日志信息
 app.use(logger('dev'));

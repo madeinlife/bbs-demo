@@ -11,7 +11,15 @@ var config = {
         host: '127.0.0.1',
         db: 'bbs_demo',
         pass: ''
-    }
+    },
+    // 文件上传配置
+    // 注：如果填写 qn_access，则会上传到 7牛，以下配置无效
+    upload: {
+        path: path.join(__dirname, 'public/upload/'),
+        url: '/public/upload/'
+    },
+    // file_limit
+    file_limit: '1MB',
 };
 
 module.exports = config;

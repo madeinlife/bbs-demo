@@ -1,0 +1,22 @@
+{{> header}}
+<div class="main">
+    <div class="sidebar">
+        {{> sidebar}}
+    </div>
+    <div class="content">
+        <div class="panel">
+            <div class="header">
+                topic list
+            </div>
+            <div class="inner">
+                topic list content
+                {{#each topics }}
+                    <div class="cell">
+                        <span>{{this.author_id}}</span>
+                        <a href="/topic/{{ this._id }}">{{title}}</a>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

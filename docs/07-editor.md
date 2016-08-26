@@ -1,5 +1,8 @@
 # 富文本选择器的
 
+## lepture-editor
+https://github.com/lepture/editor
+
 ## simditor的使用
 ### 参考文档
 1. [官网](http://simditor.tower.im/)
@@ -32,6 +35,39 @@
 
     });
 </script>
+```
+#### 上传图片配置
+```
+upload Boolean / Object default: false
+Accept false or key/value pairs. Extra options for uploading images:
+url upload api url;
+params extra params sent to the server;
+fileKey key of the file param;
+
+connectionCount how many images can be uploaded simultaneously;
+leaveConfirm messages will be shown if one leave the page while file is being uploaded;
+Default values of these options
+```
+
+```js
+var editor = new Simditor
+  textarea: $('#editor')
+  upload:{
+      url: '',
+      params: null,
+      fileKey: 'upload_file',
+      connectionCount: 3,
+      leaveConfirm: 'Uploading is in progress, are you sure to leave this page?'
+  }
+```
+> 后台返回数据格式
+
+```js
+{
+  "success": true/false,
+  "msg": "error message", # optional
+  "file_path": "[real file path]"
+}
 ```
 
 ```html

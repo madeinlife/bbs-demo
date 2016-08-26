@@ -14,6 +14,7 @@
 9. `validator`：字符串验证器，主要是`isXXX`方法等
 10. `log4js`: 日志管理模块
 11. `utility`:一个实用工具库有`md5`方法等,[docs](https://www.npmjs.com/package/utility)
+12. `connect-busboy`:文件上传处理中间件
 
 ### 简单用例
 ```javascript

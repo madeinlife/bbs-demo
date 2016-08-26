@@ -37,7 +37,8 @@
                         <input type="text" name="title" id="title" class="span9">
                         <div class="markdown-editer in-editor">
                             <div class="markdown-in-editor">
-                                <textarea name="t_content" id="editor" class="editor" cols="30" rows="10">
+                                <textarea name="t_content" id="editor" class="editor"
+                                    cols="30" rows="10" placeholder="请输入内容。。。">
 
                                 </textarea>
                                 <br>
@@ -70,12 +71,25 @@
               textarea: $('#editor'),
               toolbar: toolbar,
               placeholder: '',
-            //   upload: true,
+              upload:{
+                url: '/upload'
+              },
               //optional options
               defaultImage:'',
               pasteImage: true,
-
             });
 
     });
+
 </script>
+
+<!-- <link rel="stylesheet" href="/public/editor/editor.css">
+<script src="/public/editor/editor.js"></script>
+<script src="/public/editor/marked.js"></script>
+<script>
+    var editor = new Editor({
+        document: $('#editor'),
+        placeholder:'',
+    });
+    editor.render();
+</script> -->

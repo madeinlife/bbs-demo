@@ -2,6 +2,17 @@
 var validator = require('validator');
 var TopicModel = require('../models/topic');
 var EventProxy = require('eventproxy');
+
+var store = require('../lib/store.js');
+
+// 显示话题列表页面
+exports.showTopicList = function(req,res){
+    // TopicModel.getList();
+    TopicModel.find({},{},{sort:{create_at:-1}},function(error,topics){
+        res.render('topic/list',{topics: topics});
+    });
+
+}
 // 显示话题详情页
 exports.showDetail = function(req,res){
     // 1. 先取到文章的id
@@ -57,4 +68,33 @@ exports.topicCreate = function(req, res){
         res.render('topic/create', {sucess: '创建话题《' + title + '》成功:'});
     })
 
+};
+
+// 图片上传
+exports.upload = function (req, res, next) {
+  var isFileLimit = false;
+  req.busboy.on('file', function (fieldname, file, filename, encoding, mimetype) {
+      file.on('limit', function () {
+        isFileLimit = true;
+        res.json({
+          success: false,
+          msg: 'File size too large. Max is ' + config.file_limit
+        })
+      });
+      store.upload(file, {filename: filename}, function (err, result) {
+        if (err) {
+          return next(err);
+        }
+        if (isFileLimit) {
+          return;
+        }
+        console.log(result.url);
+        res.json({
+          success: true,
+          url: result.url,
+          file_path:result.url,
+        });
+      });
+    });
+  req.pipe(req.busboy);
 };

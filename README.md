@@ -8,6 +8,7 @@
 5. [express中mongoos的使用](./docs/05-mongoose.md);
 6. [express中session的使用](./docs/06-express-session.md);
 7. [富文本编辑器的使用](./docs/07-editor.md)
+8. [文件上传](./docs/08-upload.md)
 
 ## 使用说明
 - git clone https://github.com/madeinlife/bbs-demo.git

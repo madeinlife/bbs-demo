@@ -1,6 +1,10 @@
 ## express 模板引擎的使用
 
 ## 模板引擎handlebars
+参考文档：
+- [handlebarsjs docs](http://handlebarsjs.com/builtin_helpers.html)
+
+
 ### 1：[hbs](https://github.com/donpark/hbs)
 #### 基本使用
 **简单应用**
